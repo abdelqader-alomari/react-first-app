@@ -1,44 +1,49 @@
-import React from 'react'
-class HornedBeasts extends React.Component {
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+
+class HornedBeast extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = { clicks: 0 }
+        super(props);
+        this.state = {
+            clicks: 0
+        };
+    }
+    clicking = () => {
+        this.setState(
+            {
+                clicks: this.state.clicks + 1
+            }
+        );
     }
 
-    clicking = () => {
-        this.setState({
-            clicks: this.state.clicks + 1
-        })
+    showCard = () => {
+        this.props.showCard({
+            title: this.props.title,
+            description: this.props.description,
+            source: this.props.source
+        });
     }
+
     render() {
         return (
-            <div className="col mb-4">
-                <div className="card" style={{
-                    width: "25rem", margin: "10px", height: "32rem"
-                }} >
-                    <h2>{this.props.title}</h2>
-                    <img style={{ height: "15rem", width: "100%" }} onClick={this.clicking} src={this.props.source} alt={this.props.title} title={this.props.title} />
-                    <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">{this.props.description}</p>
-                        <p> Number of clicks "favored" 🧡 : {this.state.clicks}</p>
-                        <button onClick={this.clicking} className="btn btn-primary">I like this horned Animal </button>
-                    </div>
-                </div>
-            </div >
+            <div class='cards' style={{ margin: '2rem' }}>
+                <Card style={{ width: '23rem', textAlign: 'center', height: '35rem' }} class='card' onClick={this.showCard}>
+                    <Card.Title>
+                        <h3>{this.props.title}</h3>
+                    </Card.Title>
+                    <Card.Img style={{ height: '75%' }} onClick={this.clicking} variant="top" src={this.props.source} />
+                    <Card.Body>
+                        <Card.Text>
+                            {this.props.description}
+                        </Card.Text>
+                        <Card.Text> &#10084; {this.state.clicks}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
+        );
 
-            //     <div className="container">
-            //         <div className="card" style={{ width: "18rem" }}>
-            //             <div className="card">
-            //                 <h2>{this.props.title}</h2>
-            //                 <div className="card-reader">
-            //                     <img style={{ maxWidth: '100%' }} src={this.props.source} alt={this.props.title} title={this.props.title} />
-            //                 </div>
-            //             </div>
-            //             <p className="card-body">{this.props.description}</p>
-            //         </div>
-            //     </div>
-        )
     }
 }
-export default HornedBeasts
+
+export default HornedBeast;

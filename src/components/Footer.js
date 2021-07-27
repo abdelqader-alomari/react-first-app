@@ -6,7 +6,10 @@ class Footer extends React.Component {
     }
     render() {
         return (
-            <p onClick={this.footerFun}>&copy; By Abdelqader Al-Omari</p>
+            <div className="bg-secondary text-white">
+                <p onClick={this.footerFun}>&copy; Abdelqader Al-Omari</p>
+
+            </div>
         )
     }
 }

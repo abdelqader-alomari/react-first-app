@@ -1,28 +1,28 @@
-import React from 'react'
-import HornedBeasts from './HornedBeasts'
-import PostData from './data.json'
-class Main extends React.Component {
-    constructor() {
-        super()
-        this.state = { PostData: PostData }
+import React from 'react';
+import HornedBeast from './HornedBeasts';
+import CardGroup from 'react-bootstrap/CardGroup';
 
-    }
-    mapping(i) {
-        const hornedAnimals = i.map(hornedAnimal => <HornedBeasts
-            source={hornedAnimal.image_url}
-            title={hornedAnimal.title}
-            description={hornedAnimal.description}
-        />);
-        return hornedAnimals;
+class Main extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            PostData: this.props.PostData
+        };
     }
 
     render() {
-        return (
-            <div className="row row-cols-1 row-cols-md-3">
-                {this.mapping(this.state.PostData)}
-            </div>
-        )
+        const hornedAnimals = this.state.PostData.map(element => {
+            return (
+                <HornedBeast
+                    title={element.title}
+                    source={element.image_url}
+                    description={element.description}
+                    showCard={this.props.showCard}
+                />
+            );
+        });
+        return (<CardGroup id='group'>{hornedAnimals}</CardGroup>);
     }
 }
 
-export default Main
+export default Main;
