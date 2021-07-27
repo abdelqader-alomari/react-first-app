@@ -22,7 +22,6 @@ class Main extends React.Component {
             );
         });
         return (<CardGroup id='group'>{hornedAnimals}</CardGroup>);
-
     }
 }
 
