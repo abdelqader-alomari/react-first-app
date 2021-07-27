@@ -18,7 +18,7 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="row row-cols-1 row-cols-md-3">
                 {this.mapping(this.state.PostData)}
             </div>
         )

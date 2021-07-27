@@ -12,19 +12,20 @@ class HornedBeasts extends React.Component {
     }
     render() {
         return (
-
-            <div className="card" style={{
-                width: "18rem", margin: "10px"
-            }} >
-                <h2>{this.props.title}</h2>
-                <img onClick={this.clicking} src={this.props.source} alt={this.props.title} title={this.props.title} />
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">{this.props.description}</p>
-                    <p> Number of clicks "favored" 🧡 : {this.state.clicks}</p>
-                    <button onClick={this.clicking} className="btn btn-primary">I like this horned Animal </button>
+            <div className="col mb-4">
+                <div className="card" style={{
+                    width: "25rem", margin: "10px", height: "32rem"
+                }} >
+                    <h2>{this.props.title}</h2>
+                    <img style={{ height: "15rem", width: "100%" }} onClick={this.clicking} src={this.props.source} alt={this.props.title} title={this.props.title} />
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">{this.props.description}</p>
+                        <p> Number of clicks "favored" 🧡 : {this.state.clicks}</p>
+                        <button onClick={this.clicking} className="btn btn-primary">I like this horned Animal </button>
+                    </div>
                 </div>
-            </div>
+            </div >
 
             //     <div className="container">
             //         <div className="card" style={{ width: "18rem" }}>
