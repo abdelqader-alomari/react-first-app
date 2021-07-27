@@ -6,9 +6,7 @@ class Header extends React.Component {
     }
     render() {
         return (
-            <div className='bg-dark text-white'>
-                <h1 onClick={this.headerFun}>Horned Animals</h1>
-            </div>
+            <h1 onClick={this.headerFun}>Horned Animals</h1>
         )
     }
 }
