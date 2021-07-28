@@ -4,8 +4,8 @@ import { Card, Modal } from 'react-bootstrap'
 class SelectedBeast extends React.Component {
     render() {
         return (
-            <Modal show={this.props.show} hideCard={this.props.hideCard}>
-                <Modal.Header closeButton onClick={this.props.hideCard}>
+            <Modal show={this.props.show} hide={this.props.hide}>
+                <Modal.Header closeButton onClick={this.props.hide}>
                     <Modal.Title>{this.props.selected.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

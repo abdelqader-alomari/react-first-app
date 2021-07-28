@@ -26,8 +26,9 @@ class HornedBeast extends React.Component {
 
     render() {
         return (
-            <div class='cards' style={{ margin: '2rem' }}>
-                <Card style={{ width: '23rem', textAlign: 'center', height: '35rem' }} class='card' onClick={this.showCard}>
+
+            <div className='cards' style={{ margin: '2rem' }}>
+                <Card style={{ width: '23rem', textAlign: 'center', height: '35rem' }} className='card' onClick={this.showCard}>
                     <Card.Title>
                         <h3>{this.props.title}</h3>
                     </Card.Title>
