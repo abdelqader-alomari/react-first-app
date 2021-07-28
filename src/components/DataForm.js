@@ -30,22 +30,6 @@ class DataForm extends React.Component {
 
                     </Form.Control>
                 </Form>
-
-
-                {/* <DropdownButton
-                alignRight
-                title="Dropdown right"
-                id="dropdown-menu-align-right"
-                onSelect={handleSelect}
-            >
-                <Dropdown.Item eventKey="All">All</Dropdown.Item>
-                <Dropdown.Item eventKey="1">One</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Two</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item eventKey="3">Three</Dropdown.Item>
-            </DropdownButton>
-            <h4>You selected {value}</h4> */}
-
             </>
         );
     }
