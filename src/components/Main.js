@@ -11,19 +11,35 @@ class Main extends React.Component {
     }
 
     render() {
-        const hornedAnimals = this.state.PostData.map(element => {
-            return (
-                <HornedBeast
-                    title={element.title}
-                    source={element.image_url}
-                    description={element.description}
-                    showCard={this.props.showCard}
-                />
-            );
-        });
-        return (<CardGroup id='group'>{hornedAnimals}</CardGroup>);
-
+        return (
+            <CardGroup id='group'>
+                {
+                    !this.props.filtered ? this.props.PostData.map((element, index) => (
+                        <HornedBeast
+                            title={element.title}
+                            source={element.image_url}
+                            description={element.description}
+                            name={element.keyword}
+                            key={index}
+                            horns={element.horns}
+                            showCard={this.props.showCard}
+                        />
+                    )) : this.props.filtered.map((element, index) => (
+                        <HornedBeast
+                            title={element.title}
+                            source={element.image_url}
+                            description={element.description}
+                            name={element.keyword}
+                            key={index}
+                            horns={element.horns}
+                            showCard={this.props.showCard}
+                        />
+                    ))
+                }
+            </CardGroup>
+        );
     }
 }
+
 
 export default Main;

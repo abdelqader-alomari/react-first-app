@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import SelectedBeast from './components/SelectedBeast';
 import PostData from './components/data.json';
+import DataForm from './components/DataForm';
 
 
 
@@ -14,6 +15,8 @@ class App extends React.Component {
     this.state = {
       PostData: PostData,
       show: false,
+      chosen: null,
+      filtered: null,
       selected: {}
     };
   }
@@ -29,12 +32,23 @@ class App extends React.Component {
       show: false,
     });
   }
+
+  filterData = (form) => {
+    if (form === 0) {
+      this.setState({ filtered: null })
+    } else {
+      let filteredArr = this.state.PostData.filter(element => element.horns === form);
+      this.setState({ filtered: filteredArr })
+    }
+  }
+
   render() {
     return (
       <div >
         <Header />
-        <Main PostData={this.state.PostData} showCard={this.HornedCardShowing} />
-        <SelectedBeast show={this.state.show} hideCard={this.hideCard} selected={this.state.selected} />
+        < DataForm filterData={this.filterData} />
+        <Main PostData={this.state.PostData} filtered={this.state.filtered} showCard={this.HornedCardShowing} />
+        <SelectedBeast show={this.state.show} hide={this.hideCard} selected={this.state.selected} />
         <Footer />
       </div>
     );

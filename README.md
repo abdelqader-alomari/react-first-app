@@ -69,9 +69,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## Time Estimate - lab-03:
+## Time Estimate - lab-04:
 
-| Number and name of feature                 | Estimated time | Start time | Finish time | Actual time |
-| ------------------------------------------ | -------------- | ---------- | ----------- | ----------- |
-| Feature #1: Display a Modal & update files | 3.5 hours      | 1:00       | 6:00        | 5 hours     |
-| Feature #2: Styling                        | 30 minutes     | 6:30       | 7:10        | 30 minutes  |
+| Number and name of feature                  | Estimated time | Start time | Finish time | Actual time |
+| ------------------------------------------- | -------------- | ---------- | ----------- | ----------- |
+| Feature #1: Filter by Numbers of Horns      | 2-5 hours      | 2:00       | 4:20        | 2:20 hours  |
+| Feature #2: Styling and try dropdown method | 60 minutes     | 4:30       | 5:35        | 65 minutes  |
